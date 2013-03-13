@@ -1,6 +1,9 @@
 package me.tannersmith.diffbot;
 
+import java.util.List;
+
 import argo.jdom.JdomParser;
+import argo.jdom.JsonNode;
 import argo.jdom.JsonRootNode;
 import argo.saj.InvalidSyntaxException;
 
@@ -112,7 +115,19 @@ public class Article implements Entity {
 		xpath = root.getStringValue("xpath");
 		icon = root.getStringValue("icon");
 		html = root.getStringValue("html");
-//		tags = root.getStringValue("tags");
+		
+		if (root.isNode("tags")) {
+			JsonRootNode tagNode = root.getRootNode("tags");
+			List<JsonNode> elements = tagNode.getElements();
+			
+			tags = new String[elements.size()];
+			
+			for (int i = 0; i < tags.length; i++) {
+				JsonNode node = elements.get(i);
+				
+				tags[i] = node.getText();
+			}
+		}
 		
 		if (root.isNode("summary")) {
 			summary = root.getStringValue("summary");
