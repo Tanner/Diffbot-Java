@@ -1,5 +1,9 @@
 package me.tannersmith.diffbot;
 
+import argo.jdom.JdomParser;
+import argo.jdom.JsonRootNode;
+import argo.saj.InvalidSyntaxException;
+
 /**
  * This class represents a Diffbot Article.
  * 
@@ -7,7 +11,7 @@ package me.tannersmith.diffbot;
  * 
  * @author Tanner
  */
-public class Article {
+public class Article implements Entity {
 	/**
 	 * Plain-text of the extracted article
 	 */
@@ -59,9 +63,60 @@ public class Article {
 	
 	/**
 	 * Construct a new Article.
+	 * 
+	 * @param response Response from the API server
+	 * 
+	 * @throws DiffbotAPIException If unable to parse the response
 	 */
-	public Article() {
-		// Nothing so far
+	public Article(String response) throws DiffbotAPIException {
+		parseResponse(response);
+	}
+	
+	/**
+	 * Parses the JSON response from the API server.
+	 * 
+	 * @see Entity#parseResponse(String)
+	 * 
+	 * @throws DiffbotAPIException If unable to parse the response as JSON
+	 */
+	public void parseResponse(String response) throws DiffbotAPIException {
+		JdomParser parser = new JdomParser();
+		JsonRootNode root = null;
+		
+		try {
+			root = parser.parse(response);
+		} catch (InvalidSyntaxException e) {
+			throw new DiffbotAPIException("API did not respond in a format that could be understood");
+		}
+		
+		text = root.getStringValue("text");
+		title = root.getStringValue("title");
+		
+		if (root.isNode("date")) {
+			date = root.getStringValue("date");
+		}
+		
+		if (root.isNode("author")) {
+			author = root.getStringValue("author");
+		}
+		
+		if (root.isNode("nextPage")) {
+			nextPage = root.getStringValue("nextPage");
+		}
+		
+		if (root.isNode("numPages")) {
+			numPages = Integer.parseInt(root.getNumberValue("numPages"));
+		}
+		
+		url = root.getStringValue("url");
+		xpath = root.getStringValue("xpath");
+		icon = root.getStringValue("icon");
+		html = root.getStringValue("html");
+//		tags = root.getStringValue("tags");
+		
+		if (root.isNode("summary")) {
+			summary = root.getStringValue("summary");
+		}
 	}
 
 	/**

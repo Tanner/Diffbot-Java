@@ -52,9 +52,7 @@ public class Diffbot {
 			throw new DiffbotAPIException("Unable to make API request");
 		}
 		
-		System.out.println(content);
-		
-		return null;
+		return new Article(content);
 	}
 	
 	/**
