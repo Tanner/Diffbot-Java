@@ -36,6 +36,27 @@ public class Diffbot {
 		}
 	}
 	
+	public Article getArticle(String url, boolean html, boolean dontStripAds, boolean tags, boolean comments, boolean summary) throws DiffbotAPIException {
+		URL articleAPIURL = null;
+		String content = null;
+		
+		try {
+			articleAPIURL = new URL(constructArticleAPIURL(url, html, dontStripAds, tags, comments, summary));
+		} catch (MalformedURLException e) {			
+			throw new DiffbotAPIException("Unable to create API request URL");
+		}
+		
+		try {
+			content = requestURLContent(articleAPIURL);
+		} catch (IOException e) {
+			throw new DiffbotAPIException("Unable to make API request");
+		}
+		
+		System.out.println(content);
+		
+		return null;
+	}
+	
 	/**
 	 * Construct the Article API URL to extract clean article text from news article web pages.
 	 * 
