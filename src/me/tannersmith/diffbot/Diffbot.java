@@ -27,4 +27,32 @@ public class Diffbot {
 			throw new IllegalArgumentException("API token must not be of length zero.");
 		}
 	}
+	
+	/**
+	 * Construct the Article API URL to extract clean article text from news article web pages.
+	 * 
+	 * @param url URL to extract article from
+	 * @param html Return html instead of plain text
+	 * @param dontStripAds Don't strip any inline ads
+	 * @param tags Generate tags for the extracted story
+	 * @param comments Find the comments and identify count, link, etc
+	 * @param summary Returns a summary text
+	 * 
+	 * @return A String of the constructed URL
+	 */
+	private String constructArticleAPIURL(String url, boolean html, boolean dontStripAds, boolean tags, boolean comments, boolean summary) {
+		StringBuilder apiURL = new StringBuilder();
+		
+		apiURL.append(Diffbot.apiURL);
+		apiURL.append("article");
+		apiURL.append("?token=" + token);
+		apiURL.append("&url=" + url);
+		apiURL.append("&html=" + Boolean.toString(html));
+		apiURL.append("&dontStripAds=" + Boolean.toString(dontStripAds));
+		apiURL.append("&tags=" + Boolean.toString(tags));
+		apiURL.append("&comments=" + Boolean.toString(comments));
+		apiURL.append("&summary=" + Boolean.toString(summary));
+		
+		return apiURL.toString();
+	}
 }
