@@ -6,6 +6,9 @@ package me.tannersmith.diffbot;
  * @author Tanner Smith
  */
 public class Diffbot {
+	/**
+	 * A Diffbot API token.
+	 */
 	private String token;
 	
 	/**
