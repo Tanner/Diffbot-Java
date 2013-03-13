@@ -10,6 +10,10 @@ public class Diffbot {
 	 * A Diffbot API token.
 	 */
 	private String token;
+	/**
+	 * Diffbot API URL.
+	 */
+	private static final String apiURL = "http://www.diffbot.com/api/";
 	
 	/**
 	 * Construct a new Diffbot using the provided API token.
