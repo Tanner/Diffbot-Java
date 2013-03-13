@@ -1,6 +1,11 @@
 package me.tannersmith.diffbot;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.net.URLEncoder;
 
 /**
@@ -80,5 +85,28 @@ public class Diffbot {
 		}
 		
 		return apiURL.toString();
+	}
+	
+	/**
+	 * Request the content at a URL.
+	 * 
+	 * @param url URL object for the requested URL
+	 * 
+	 * @return String containing the content at the URL
+	 * @throws IOException If there is a problem accessing the page
+	 */
+	private String requestURLContent(URL url) throws IOException {		
+		BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
+		
+		StringBuilder content = new StringBuilder();
+		String inputLine;
+		
+		while ((inputLine = in.readLine()) != null) {
+		    content.append(inputLine);
+		}
+		
+		in.close();
+		
+		return content.toString();
 	}
 }
