@@ -5,32 +5,32 @@ package me.tannersmith.diffbot;
  * 
  * @author Tanner Smith
  */
-public class ArticleRetrievalException extends Exception {
+public class DiffbotAPIException extends Exception {
 	/**
 	 * @see Exception#Exception()
 	 */
-	public ArticleRetrievalException() {
+	public DiffbotAPIException() {
 		super();
 	}
 	
 	/**
 	 * @see Exception#Exception(String)
 	 */
-	public ArticleRetrievalException(String message) {
+	public DiffbotAPIException(String message) {
 		super(message);
 	}
 	
 	/**
 	 * @see Exception#Exception(String, Throwable)
 	 */
-	public ArticleRetrievalException(String message, Throwable cause) {
+	public DiffbotAPIException(String message, Throwable cause) {
 		super(message, cause);
 	}
 	
 	/**
 	 * @see Exception#Exception(Throwable)
 	 */
-	public ArticleRetrievalException(Throwable cause) {
+	public DiffbotAPIException(Throwable cause) {
 		super(cause);
 	}
 }
