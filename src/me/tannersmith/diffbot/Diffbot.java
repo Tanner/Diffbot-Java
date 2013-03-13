@@ -1,5 +1,8 @@
 package me.tannersmith.diffbot;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 /**
  * Main class for interaction with the Diffbot API.
  * 
@@ -42,6 +45,14 @@ public class Diffbot {
 	 */
 	private String constructArticleAPIURL(String url, boolean html, boolean dontStripAds, boolean tags, boolean comments, boolean summary) {
 		StringBuilder apiURL = new StringBuilder();
+		
+		try {
+			url = URLEncoder.encode(url, "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+			
+			return null;
+		}
 		
 		apiURL.append(Diffbot.apiURL);
 		apiURL.append("article");
