@@ -53,9 +53,7 @@ public class Diffbot {
 		
 		try {
 			url = URLEncoder.encode(url, "UTF-8");
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-			
+		} catch (UnsupportedEncodingException e) {			
 			return null;
 		}
 		
