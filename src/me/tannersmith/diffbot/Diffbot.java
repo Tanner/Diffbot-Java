@@ -58,11 +58,26 @@ public class Diffbot {
 		apiURL.append("article");
 		apiURL.append("?token=" + token);
 		apiURL.append("&url=" + url);
-		apiURL.append("&html=" + Boolean.toString(html));
-		apiURL.append("&dontStripAds=" + Boolean.toString(dontStripAds));
-		apiURL.append("&tags=" + Boolean.toString(tags));
-		apiURL.append("&comments=" + Boolean.toString(comments));
-		apiURL.append("&summary=" + Boolean.toString(summary));
+		
+		if (html) {
+			apiURL.append("&html");
+		}
+		
+		if (dontStripAds) {
+			apiURL.append("&dontStripAds");
+		}
+		
+		if (tags) {
+			apiURL.append("&tags");
+		}
+		
+		if (comments) {
+			apiURL.append("&comments");
+		}
+		
+		if (summary) {
+			apiURL.append("&summary");
+		}
 		
 		return apiURL.toString();
 	}
