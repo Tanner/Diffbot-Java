@@ -8,6 +8,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
+import me.tannersmith.diffbot.entity.Article;
+
 /**
  * Main class for interaction with the Diffbot API.
  * 

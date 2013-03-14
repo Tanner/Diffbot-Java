@@ -1,6 +1,9 @@
-package me.tannersmith.diffbot;
+package me.tannersmith.diffbot.entity;
 
 import java.util.List;
+
+import me.tannersmith.diffbot.DiffbotAPIException;
+import me.tannersmith.diffbot.Entity;
 
 import argo.jdom.JdomParser;
 import argo.jdom.JsonNode;
