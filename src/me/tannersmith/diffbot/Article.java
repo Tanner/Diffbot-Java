@@ -1,9 +1,7 @@
-package me.tannersmith.diffbot.entity;
+package me.tannersmith.diffbot;
 
 import java.util.List;
 
-import me.tannersmith.diffbot.DiffbotAPIException;
-import me.tannersmith.diffbot.Entity;
 
 import argo.jdom.JdomParser;
 import argo.jdom.JsonNode;
@@ -17,7 +15,7 @@ import argo.saj.InvalidSyntaxException;
  * 
  * @author Tanner
  */
-public class Article implements Entity {
+public class Article {
 	/**
 	 * Plain-text of the extracted article
 	 */

@@ -1,4 +1,4 @@
-package me.tannersmith.diffbot.entity;
+package me.tannersmith.diffbot;
 
 /**
  * Enumeration used for the Type field for {@link #Media Media}.
