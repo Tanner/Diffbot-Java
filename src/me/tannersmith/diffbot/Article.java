@@ -83,7 +83,7 @@ public class Article {
 	/**
 	 * Parses the JSON response from the API server.
 	 * 
-	 * @see Entity#parseResponse(String)
+	 * @param response JSON response from the API server
 	 * 
 	 * @throws DiffbotAPIException If unable to parse the response as JSON
 	 */
