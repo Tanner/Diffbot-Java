@@ -43,6 +43,10 @@ public class Article implements Entity {
 	 */
 	private int numPages;
 	/**
+	 * Media items (images or videos), if detected and extracted
+	 */
+	private Media[] media;
+	/**
 	 * Actual URL of original source
 	 */
 	private String url;
@@ -118,6 +122,17 @@ public class Article implements Entity {
 		xpath = root.getStringValue("xpath");
 		icon = root.getStringValue("icon");
 		html = root.getStringValue("html");
+		
+		if (root.isNode("media")) {
+			JsonRootNode mediaNode = root.getRootNode("media");
+			List<JsonNode> elements = mediaNode.getElements();
+			
+			media = new Media[elements.size()];
+			
+			for (int i = 0; i < media.length; i++) {
+				JsonNode node = elements.get(i);
+			}
+		}
 		
 		if (root.isNode("tags")) {
 			JsonRootNode tagNode = root.getRootNode("tags");
