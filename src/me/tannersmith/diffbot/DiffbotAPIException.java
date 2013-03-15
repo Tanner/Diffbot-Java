@@ -7,6 +7,8 @@ package me.tannersmith.diffbot;
  */
 public class DiffbotAPIException extends Exception {
 	/**
+	 * Constructs a DiffbotAPIException with no detail message.
+	 * 
 	 * @see Exception#Exception()
 	 */
 	public DiffbotAPIException() {
@@ -14,6 +16,8 @@ public class DiffbotAPIException extends Exception {
 	}
 	
 	/**
+	 * Constructs a DiffbotAPIException with a detail message.
+	 * 
 	 * @see Exception#Exception(String)
 	 */
 	public DiffbotAPIException(String message) {
@@ -21,6 +25,8 @@ public class DiffbotAPIException extends Exception {
 	}
 	
 	/**
+	 * Constructs a DiffbotAPIException with a detail message and a cause.
+	 * 
 	 * @see Exception#Exception(String, Throwable)
 	 */
 	public DiffbotAPIException(String message, Throwable cause) {
@@ -28,6 +34,8 @@ public class DiffbotAPIException extends Exception {
 	}
 	
 	/**
+	 * Constructs a DiffbotAPIException with a cause.
+	 * 
 	 * @see Exception#Exception(Throwable)
 	 */
 	public DiffbotAPIException(Throwable cause) {
