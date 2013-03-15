@@ -5,7 +5,7 @@ import argo.jdom.JsonNode;
 /**
  * Class representing a media item that would be within a page.
  * 
- * @author Tanner
+ * @author Tanner Smith
  */
 public class Media {
 	/**

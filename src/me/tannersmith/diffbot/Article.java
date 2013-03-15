@@ -2,7 +2,6 @@ package me.tannersmith.diffbot;
 
 import java.util.List;
 
-
 import argo.jdom.JdomParser;
 import argo.jdom.JsonNode;
 import argo.jdom.JsonRootNode;
@@ -13,7 +12,7 @@ import argo.saj.InvalidSyntaxException;
  * 
  * Created from http://www.diffbot.com/our-apis/article/
  * 
- * @author Tanner
+ * @author Tanner Smith
  */
 public class Article {
 	/**
