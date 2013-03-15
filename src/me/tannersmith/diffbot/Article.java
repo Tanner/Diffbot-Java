@@ -129,6 +129,8 @@ public class Article {
 			
 			for (int i = 0; i < media.length; i++) {
 				JsonNode node = elements.get(i);
+				
+				media[i] = new Media(node);
 			}
 		}
 		
