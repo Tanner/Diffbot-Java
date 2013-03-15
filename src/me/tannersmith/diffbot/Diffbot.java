@@ -37,6 +37,20 @@ public class Diffbot {
 		}
 	}
 	
+	/**
+	 * Get the article text from Diffbot.
+	 * 
+	 * @param url URL to extract article from
+	 * @param html Return html instead of plain text
+	 * @param dontStripAds Don't strip any inline ads
+	 * @param tags Generate tags for the extracted story
+	 * @param comments Find the comments and identify count, link, etc
+	 * @param summary Returns a summary text
+	 * 
+	 * @return {@code Article} created with clean text extracted along with rest of requested items
+	 * 
+	 * @throws DiffbotAPIException When unable to make API request
+	 */
 	public Article getArticle(String url, boolean html, boolean dontStripAds, boolean tags, boolean comments, boolean summary) throws DiffbotAPIException {
 		URL articleAPIURL = null;
 		String content = null;
