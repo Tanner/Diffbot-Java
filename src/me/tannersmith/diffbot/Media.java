@@ -71,4 +71,21 @@ public class Media {
 	public String getLink() {
 		return link;
 	}
+	
+	@Override
+	public String toString() {
+		StringBuilder string = new StringBuilder();
+		
+		string.append(type + " ");
+		
+		if (primary) {
+			string.append("primary ");
+		} else {
+			string.append("not primary ");
+		}
+		
+		string.append(link);
+		
+		return string.toString();
+	}
 }
