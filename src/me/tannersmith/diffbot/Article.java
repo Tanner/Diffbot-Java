@@ -152,6 +152,8 @@ public class Article {
 	}
 
 	/**
+	 * Return extracted text from the article.
+	 * 
 	 * @return Article text
 	 */
 	public String getText() {
@@ -159,34 +161,44 @@ public class Article {
 	}
 
 	/**
-	 * @return Title of the article
+	 * Return title of article.
+	 * 
+	 * @return Title
 	 */
 	public String getTitle() {
 		return title;
 	}
 
 	/**
-	 * @return Date of the article
+	 * Returns date of the article.
+	 * 
+	 * @return Date
 	 */
 	public String getDate() {
 		return date;
 	}
 
 	/**
-	 * @return Author of the article
+	 * Return author of the article.
+	 * 
+	 * @return Author's name
 	 */
 	public String getAuthor() {
 		return author;
 	}
 
 	/**
-	 * @return Next page URL for the article
+	 * Return next page URL, if any.
+	 * 
+	 * @return Next page URL
 	 */
 	public String getNextPage() {
 		return nextPage;
 	}
 
 	/**
+	 * Return the number of pages in the article, if any.
+	 * 
 	 * @return Number pages for the article
 	 */
 	public int getNumPages() {
@@ -194,6 +206,8 @@ public class Article {
 	}
 
 	/**
+	 * Return the URL of the article.
+	 * 
 	 * @return URL of the article
 	 */
 	public String getURL() {
@@ -201,34 +215,44 @@ public class Article {
 	}
 
 	/**
-	 * @return XPath expression for the article
+	 * Return the XPath expression for the article.
+	 * 
+	 * @return XPath expression
 	 */
 	public String getXPath() {
 		return xpath;
 	}
 
 	/**
-	 * @return Favicon for the article
+	 * Return the favicon for the website the article is on.
+	 * 
+	 * @return Favicon URL
 	 */
 	public String getIcon() {
 		return icon;
 	}
 
 	/**
-	 * @return HTML of the article
+	 * Return the HTML source for the article.
+	 * 
+	 * @return HTML
 	 */
 	public String getHTML() {
 		return html;
 	}
 
 	/**
-	 * @return Array of tags about the article
+	 * Return the array of tags for the article.
+	 * 
+	 * @return Array of String tags
 	 */
 	public String[] getTags() {
 		return tags;
 	}
 
 	/**
+	 * Return the calculated summary of the article.
+	 * 
 	 * @return Summary of the article
 	 */
 	public String getSummary() {

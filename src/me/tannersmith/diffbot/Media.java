@@ -52,6 +52,8 @@ public class Media {
 	}
 	
 	/**
+	 * Return the type of media.
+	 * 
 	 * @return Type of media
 	 */
 	public Type getType() {
@@ -59,6 +61,8 @@ public class Media {
 	}
 	
 	/**
+	 * Return whether or not the media is the primary media on the source.
+	 * 
 	 * @return Whether or not the media is the primary media on the source
 	 */
 	public boolean isPrimary() {
@@ -66,6 +70,8 @@ public class Media {
 	}
 	
 	/**
+	 * Return a link to the media.
+	 * 
 	 * @return Link to the media
 	 */
 	public String getLink() {

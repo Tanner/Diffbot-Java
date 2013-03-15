@@ -34,6 +34,8 @@ public enum Type {
 	}
 	
 	/**
+	 * Returns the name of the Type.
+	 * 
 	 * @return Human-readable name of the Type
 	 */
 	public String getName() {
