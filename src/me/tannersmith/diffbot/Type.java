@@ -1,7 +1,7 @@
 package me.tannersmith.diffbot;
 
 /**
- * Enumeration used for the Type field for {@link #Media Media}.
+ * Enumeration used for the Type field for {@link Media}.
  * 
  * @author Tanner Smith
  */
