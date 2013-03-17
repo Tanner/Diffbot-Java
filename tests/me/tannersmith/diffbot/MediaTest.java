@@ -23,7 +23,7 @@ import argo.saj.InvalidSyntaxException;
 public class MediaTest {
 	@Test
 	public void testCorrectParsing() {
-		Media media = readMediaFromFile("tests/me/tannersmith/diffbot/media_json_good.txt");
+		Media media = readMediaFromFile("tests/me/tannersmith/diffbot/media_json_good_1.txt");
 		
 		assertEquals(media.getType(), Type.IMAGE);
 		assertTrue(media.isPrimary());
