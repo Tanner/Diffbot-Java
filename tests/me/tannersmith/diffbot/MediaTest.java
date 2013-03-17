@@ -23,9 +23,24 @@ import argo.saj.InvalidSyntaxException;
 public class MediaTest {
 	@Test
 	public void testCorrectParsing() {
+		// Test 1
 		Media media = readMediaFromFile("tests/me/tannersmith/diffbot/media_json_good_1.txt");
 		
 		assertEquals(media.getType(), Type.IMAGE);
+		assertTrue(media.isPrimary());
+		assertEquals(media.getLink(), "http://s3.amazonaws.com/foofoo_large.png");
+		
+		// Test 2
+		media = readMediaFromFile("tests/me/tannersmith/diffbot/media_json_good_2.txt");
+		
+		assertEquals(media.getType(), Type.IMAGE);
+		assertFalse(media.isPrimary());
+		assertEquals(media.getLink(), "http://s3.amazonaws.com/foofoo_large.png");
+		
+		// Test 3
+		media = readMediaFromFile("tests/me/tannersmith/diffbot/media_json_good_3.txt");
+		
+		assertEquals(media.getType(), Type.VIDEO);
 		assertTrue(media.isPrimary());
 		assertEquals(media.getLink(), "http://s3.amazonaws.com/foofoo_large.png");
 	}
