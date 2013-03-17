@@ -1,0 +1,5 @@
+{
+	"type": "image",
+	"primary": "true",
+	"link": "http://s3.amazonaws.com/foofoo_large.png"
+}
