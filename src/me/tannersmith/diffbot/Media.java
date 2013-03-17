@@ -45,7 +45,7 @@ public class Media {
 		type = Type.getTypeFromName(node.getStringValue("type"));
 				
 		if (node.isNode("primary")) {
-			primary = Boolean.getBoolean(node.getStringValue("primary"));
+			primary = Boolean.valueOf(node.getStringValue("primary"));
 		}
 		
 		link = node.getStringValue("link");
