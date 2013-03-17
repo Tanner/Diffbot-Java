@@ -46,6 +46,8 @@ public class Media {
 				
 		if (node.isNode("primary")) {
 			primary = Boolean.valueOf(node.getStringValue("primary"));
+		} else {
+			primary = false;
 		}
 		
 		link = node.getStringValue("link");
