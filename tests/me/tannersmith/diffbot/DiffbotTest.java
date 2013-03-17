@@ -28,5 +28,7 @@ public class DiffbotTest {
         thrown.expectMessage("API token must not be of length zero.");
         
 		Diffbot bot = new Diffbot("");
+		
+		System.out.println(bot);
 	}
 }
